@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.replace('http://localhost:5000/channels')
             }
         }
-        return false
+        //return false
     }
 })

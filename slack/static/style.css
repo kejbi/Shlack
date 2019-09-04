@@ -11,3 +11,20 @@
     align-items: center;
     flex-direction: column;
 }
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-channel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.channels {
+    display: grid;
+    width: 60%;
+    grid-template-columns: 25% 25% 25% 25%;
+}

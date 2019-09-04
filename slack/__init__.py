@@ -8,7 +8,10 @@ app.config["SECRET_KEY"] = 'asdfasdfasdf34rr523rt623'
 socketio = SocketIO(app)
 
 users = []
-channels = {}
+app_channels = {
+    'kluska': ['heniu', 'zbyniu'],
+    'kotlet': ['marchewka', 'bigos']
+}
 messages = {}
 
 import slack.routes
