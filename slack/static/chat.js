@@ -1,7 +1,5 @@
 const BASE_URL = 'http://localhost:5000'
 
-console.log('yea it\'s me bro')
-
 if(!localStorage.getItem('user')) {
     window.location.replace(BASE_URL)
 }
@@ -55,14 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     socket.on('status', (data) => {
-        console.log('status received')
-        let users = document.querySelector('.users')
-        users.innerHTML = ''
-        data.users.forEach(user => {
-            const div = document.createElement('div')
-            div.innerHTML = user
-            users.append(div)
-        })
+        const li = document.createElement('li')
+        li.innerHTML = data.message
+        document.querySelector('.messages').append(li)
     })
 
     socket.on('message delivery', (data) => {
@@ -71,10 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.messages').append(li)
     })
 
-    window.onbeforeunload = function(socket) {
-        console.log('asdddddddddddddddddddddddddddddddddddddddddddddddddddddd')
-        socket.emit('cya', {})
-    }
     
     
     

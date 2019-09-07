@@ -9,12 +9,8 @@ app.debug = True
 app.config["SECRET_KEY"] = 'asdfasdfasdf34rr523rt623'
 socketio = SocketIO(app)
 
-users = []
-app_channels = {
-    'kluska': ['heniu', 'zbyniu'],
-    'kotlet': ['marchewka', 'bigos']
-}
-
+users = ['kacpi']
+app_channels = ['kluska', 'gupek']
 
 import slack.routes
 import slack.events

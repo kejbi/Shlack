@@ -21,13 +21,13 @@ def channels():
 
 @app.route('/api/channels', methods=['GET'])
 def get_channels():
-    return jsonify(app_channels)
+    return jsonify({'channels': app_channels})
 
 @app.route('/api/channels/add', methods=['POST'])
 def add_channel():
     name = request.form.get('name')
     if name not in app_channels:
-        app_channels[name] = []
+        app_channels.append(name)
         return jsonify({'success': True})
     else:
         return jsonify({'success': False})

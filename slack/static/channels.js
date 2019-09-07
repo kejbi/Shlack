@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     channelRequest.open('GET', BASE_URL + '/api/channels')
     channelRequest.send()
     channelRequest.onload = () => {
-        const channels = JSON.parse(channelRequest.responseText)
-        for(channel in channels) {
+        const res = JSON.parse(channelRequest.responseText)
+        res.channels.forEach( channel => {
             console.log(channel)
             const div = document.createElement('div')
             div.innerHTML = channel
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.onclick = functions.channel
             div.append(button)
             document.querySelector('.channels').append(div)
-        }
+        })
     }
 
     document.querySelector('.create-channel').onsubmit = () => {

@@ -7,10 +7,8 @@ def joined(data):
     channel = data['channel']
     user = data['user']
     join_room(channel)
-    if user not in app_channels[channel]:
-        app_channels[channel].append(user)
 
-    emit('status', {'users': app_channels[channel]}, room = channel)
+    emit('status', {'message': user + ' has entered the room'}, room = channel)
 
 @socketio.on('message sent', namespace='/chat')
 def message_sent(data):
@@ -24,8 +22,7 @@ def left(data):
     channel = data['channel']
     user = data['user']
     leave_room(channel)
-    app_channels[channel].remove(user)
-    emit('status', {'users': app_channels[channel]}, room = channel)
+    emit('status', {'message': user + ' has left the room'}, room = channel)
 
 @socketio.on('disconnect')
 def disc():
