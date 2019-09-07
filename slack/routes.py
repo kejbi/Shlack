@@ -1,6 +1,5 @@
-from slack import app, socketio, users, app_channels, messages
+from slack import app, users, app_channels
 from flask import render_template, request, jsonify, redirect
-from flask_socketio import emit
 
 @app.route('/')
 def index():
@@ -27,9 +26,12 @@ def get_channels():
 @app.route('/api/channels/add', methods=['POST'])
 def add_channel():
     name = request.form.get('name')
-    user = request.form.get('user')
     if name not in app_channels:
-        app_channels[name] = [user]
+        app_channels[name] = []
         return jsonify({'success': True})
     else:
         return jsonify({'success': False})
+
+@app.route('/chat')
+def chat():
+    return render_template('chat.html')

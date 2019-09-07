@@ -1,3 +1,3 @@
-from slack import app
+from slack import socketio, app
 
-app.run(debug=True)
+socketio.run(app)

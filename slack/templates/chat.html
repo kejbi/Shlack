@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="{{url_for('static',filename='chat.js')}}"></script>
+    <title>Chat</title>
+</head>
+<body>
+    <div>
+        <div class="users"></div>
+        <button id="leave"></button>
+    </div>
+    
+    <ul class="messages"></ul>
+    <form class="bar">
+        <input id="msg" type="text" autocomplete="off" placeholder="Enter your message" />
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
