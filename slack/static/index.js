@@ -32,4 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return false
     }
+
+    window.onunload = () => {
+        console.log('bye have good time')
+    }
 })

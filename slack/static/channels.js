@@ -56,4 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
     }
+
+    document.querySelector('#logout').onclick = () => {
+        localStorage.removeItem('user')
+
+        const request = new XMLHttpRequest()
+        request.open('DELETE', BASE_URL + '/api/logout')
+        request.setRequestHeader("Content-Type", "application/json")
+        const data = {
+            user: user
+        }
+        console.log(JSON.stringify(data))
+        request.send(JSON.stringify(data))
+        request.onload = () => {
+            window.location.replace(BASE_URL)
+        }
+    }
 })

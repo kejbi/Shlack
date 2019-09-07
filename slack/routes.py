@@ -35,3 +35,11 @@ def add_channel():
 @app.route('/chat')
 def chat():
     return render_template('chat.html')
+
+@app.route('/api/logout', methods=['DELETE'])
+def logout():
+    print(users)
+    user = request.json['user']
+    users.remove(user)
+    print(users)
+    return(jsonify({'success': True}))

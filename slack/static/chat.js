@@ -34,6 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.replace(BASE_URL + '/channels')
     }
 
+    document.querySelector('#logout').onclick = () => {
+        socket.emit('bye', {channel: channel, user: user})
+        socket.disconnect()
+        console.log('elo wariacie')
+        localStorage.removeItem('channel')
+        localStorage.removeItem('user')
+
+        const request = new XMLHttpRequest()
+        request.open('DELETE', BASE_URL + '/api/logout')
+        request.setRequestHeader("Content-Type", "application/json")
+        const data = {
+            user: user
+        }
+        console.log(JSON.stringify(data))
+        request.send(JSON.stringify(data))
+        request.onload = () => {
+            window.location.replace(BASE_URL)
+        }
+    }
+
     socket.on('status', (data) => {
         console.log('status received')
         let users = document.querySelector('.users')
@@ -50,6 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
         li.innerHTML = data.message
         document.querySelector('.messages').append(li)
     })
+
+    window.onbeforeunload = function(socket) {
+        console.log('asdddddddddddddddddddddddddddddddddddddddddddddddddddddd')
+        socket.emit('cya', {})
+    }
     
     
     

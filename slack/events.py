@@ -23,9 +23,10 @@ def message_sent(data):
 def left(data):
     channel = data['channel']
     user = data['user']
-    print('no dzialam')
+    leave_room(channel)
     app_channels[channel].remove(user)
+    emit('status', {'users': app_channels[channel]}, room = channel)
 
-@socketio.on('cya')
+@socketio.on('disconnect')
 def disc():
     print('disco')
