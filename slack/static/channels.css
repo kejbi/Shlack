@@ -1,0 +1,97 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(88, 25, 83)
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    border: solid 3px rgb(224, 38, 209);
+    background-color: rgb(88, 25, 83);
+    color: white;
+}
+
+
+.create-channel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#channel-name-label {
+    font-size: 28px;
+}
+
+#channel-name {
+    height: 34px;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    border: solid 3px rgb(224, 38, 209);
+    padding: 5px;
+    font-size: 20px;
+    color: black;
+    margin-top: 10px;
+}
+
+#error {
+    color: crimson;
+    font-size: 24px;
+}
+
+#create-channel-button {
+    height: 50px;
+    width: 366px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.channels {
+    display: grid;
+    width: 60vw;
+    height: 60vh;
+    grid-template-columns: 25% 25% 25% 25%;
+    overflow-y: auto;
+
+}
+
+#logout {
+    align-self: flex-end;
+    margin: 20px;
+    height: 40px;
+    width: 100px;
+}
+
+
+
+button:hover {
+    background-color: rgb(224, 38, 209);
+    cursor: pointer;
+}
+
+.channel-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+}
+
+.tile-button {
+    height: 30px;
+    width: 80%;
+}

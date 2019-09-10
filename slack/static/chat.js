@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         socket.emit('joined', {channel: channel, user: user})
     })
 
-    document.querySelector('.bar').onsubmit = () => {
+    document.querySelector('.bot-bar').onsubmit = () => {
         let message = document.querySelector('#msg').value
         if(message != '') {
             socket.emit('message sent', {user: user, channel: channel, message: message})

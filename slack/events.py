@@ -15,7 +15,7 @@ def message_sent(data):
     channel = data['channel']
     user = data['user']
     message = data['message']
-    emit('message delivery', {'message': user + ': ' + message}, room = channel)
+    emit('message delivery', {'message': f'<b>{user}</b>: {message}'}, room = channel)
 
 @socketio.on('bye', namespace='/chat')
 def left(data):

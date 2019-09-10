@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="{{url_for('static',filename='index.js')}}" ></script>
     <title>Slack Clone</title>
 </head>
 <body>
-    <form class="enter-name">
-        <input type="text" placeholder="Enter your name" id="name" autocomplete="off"/>
-        <label></label>
-        <button type="submit">Let's go</button>
-    </form>
+    <div class="page">
+        <h1>Shlack</h1>
+        <form class="enter-name">        
+            <input type="text" placeholder="Enter your name" id="name" autocomplete="off"/>
+            <label></label>
+            <button id="letsgo" type="submit">Let's go</button>
+        </form>
+    </div>
+    
 </body>
 </html>

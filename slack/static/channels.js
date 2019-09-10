@@ -14,9 +14,8 @@ function channel_change(channel) {
     }
 }
 
-var functions = {}
-
-document.addEventListener('DOMContentLoaded', () => {
+function get_channels() {
+    document.querySelector('.channels').innerHTML = ''
     const channelRequest = new XMLHttpRequest()
     channelRequest.open('GET', BASE_URL + '/api/channels')
     channelRequest.send()
@@ -31,10 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
             button.innerHTML = 'Go chat!'
             functions.channel = channel_change(channel)
             button.onclick = functions.channel
+            button.classList.add('tile-button')
             div.append(button)
             document.querySelector('.channels').append(div)
         })
     }
+}
+
+var functions = {}
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    get_channels()
+    
+    const user = localStorage.getItem('user')
 
     document.querySelector('.create-channel').onsubmit = () => {
         const addRequest = new XMLHttpRequest()
@@ -52,9 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if(!res.success) {
                 document.querySelector('#error').innerHTML = 'Channel exists, try other name'
             }
+            else {
+                document.querySelector('#error').innerHTML = ''
+                get_channels()
+            }
             
         }
-        
+        return false;
     }
 
     document.querySelector('#logout').onclick = () => {

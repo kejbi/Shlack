@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(88, 25, 83)
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.enter-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#name {
+    height: 44px;
+    width: 284px;
+    border: none;
+    border-radius: 10px;
+    border: solid 3px rgb(224, 38, 209);
+    padding: 5px;
+    font-size: 30px;
+    color: black;
+    
+}
+
+#letsgo {
+    height: 60px;
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+    border: solid 3px rgb(224, 38, 209);
+    background-color: rgb(88, 25, 83);
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#letsgo:hover {
+    background-color: rgb(224, 38, 209);
+    cursor: pointer;
+}
+
+label {
+    color: crimson;
+    font-size: 24px;
+    
+
+}

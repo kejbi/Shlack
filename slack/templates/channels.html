@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='channels.css')}}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="{{url_for('static',filename='channels.js')}}" ></script>
     <title>Slack Clone - Channels</title>
 </head>
@@ -10,10 +11,10 @@
     <div class="page">
         <button id="logout">Logout</button>
         <form class="create-channel">
-            <label>Create your own channel</label>
+            <label id="channel-name-label">Create your own channel</label>
             <input id="channel-name" type="text" autocomplete="off" placeholder="Channel name" />
             <label id="error"></label>
-            <button type="submit">+ Create Channel</button>
+            <button type="submit" id="create-channel-button">+ Create Channel</button>
         </form>
         <div class="channels">
         </div>

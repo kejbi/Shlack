@@ -1,0 +1,92 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(88, 25, 83)
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    border: solid 3px rgb(224, 38, 209);
+    background-color: rgb(88, 25, 83);
+    color: white;
+}
+
+.chat {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 60vw; 
+    height: 70vh;
+    font-size: 24px;
+    border-bottom: solid 3px rgb(224, 38, 209);
+    overflow: hidden;
+}
+
+.top-bar {
+    width: 80vw;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bot-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60vw;
+}
+
+#msg {
+    height: 34px;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    border: solid 3px rgb(224, 38, 209);
+    padding: 5px;
+    font-size: 20px;
+    color: black;
+}
+
+#msg-send {
+    height: 50px;
+    width: 15%;
+}
+
+button:hover {
+    
+    background-color: rgb(224, 38, 209);
+    cursor: pointer;
+}
+
+#logout {
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+}
+
+#leave {
+    height: 50px;
+    width: 130px;
+    margin: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    word-wrap: break-word;
+}
+
